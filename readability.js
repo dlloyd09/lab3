@@ -61,22 +61,7 @@ function automatedReadabilityIndex(data) {
         - 21.43).toFixed(3);
 }
 
-//function report(data, data2, data3) {
-  //  console.log(data);
-    //console.log(data2);
-    /*console.log(data3);/*
-    console.log(`REPORT for ${data['filename']}`);
-    let chars = data['letters'] + data['numbers'];
-    console.log(`${chars} characters`);
-    console.log(`${data['words']} words`);
-    console.log(`${data['sentences']} sentences`);
-    console.log(`------------------`);
-    console.log(`Coleman-Liau Score: ${data['cl']}`);
-    console.log(`Automated Readability Index: ${data['ari']}\n`);*/
-//}
-
 readability(process.argv[2], data => {
-    console.log(data);
     writeToStream(fs.createWriteStream('./texts.csv', {flags: 'a'}),
                   [[
                     data['filename'],
